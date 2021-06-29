@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Задание 1
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Необходимо создать компонент <Profile>, с помощью которого мы могли бы отображать информацию о пользователе социальной сети. Данные о пользователе лежат в файле user.json.
 
-## Available Scripts
+Компонент должен принимать несколько пропсов с информацией о пользователе:
 
-In the project directory, you can run:
+    name — имя пользователя
+    tag — тег в социальной сети без @
+    location — город и страна
+    avatar — url на изображение
+    stats — объект с информацией об активности
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Задание 2
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Создать компонет <Statistics>, который бы отображал статистику по переданным пропам. К примеру загрузки в облако по типу файлов, посещение веб-страницы пользователями разных стран, финансовые траты и т. п. Данные о статистике лежат в файле statistical-data.json.
 
-### `npm test`
+Компонент должен принимать два пропа title и stats, в которых указывается заголовок и объект статистики.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    title - не обязателен, и если он не передан, не должна рендериться разметка заголовка <h2>.
+    stats - массив объектов содержащих информацию о элементе статистики. Может иметь произвольное кол-во элементов.
+    Цвет фона элемента статистики в оформлении можно пропустить, либо создать функцию для генерации случайного цвета.
 
-### `npm run build`
+# Задание 3
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Необходимо создать компонент <FriendList>, с помощью которого мы могли бы отображать информацию о друзьях пользователя. Информация о друзьях хранится в файле friends.json.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Компонент должен принимать один проп friends - массив объектов друзей.
+Компонент должен принимать несколько пропов:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    avatar - ссылка на аватар
+    name - имя друга
+    isOnline - буль сигнализирующий о состоянии друга, в сети или нет.
 
-### `npm run eject`
+В зависимости от пропа isOnline, должен меняться цвет фона span.status. Это можно сделать через разный CSS-класс или Styled Components.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Задание 4
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Необходимо создать компонент истории транзакций в личном кабинете интернет банка.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Данные для списка доступны в формате JSON в файле transactions.json. Это массив объектов, каждый объект описывает одну транзакцию со следующими свойствами:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    id — уникальный идентификатор транзакции
+    type — тип транзакции
+    amount - сумма транзакции
+    currency - тип валюты
+    
+Необходимо создать компонент <TransactionHistory> принимающий один проп items - массив объектов транзакций из transactions.json. Компонент создает разметку таблицы. Каждая транзакция это строка таблицы.
