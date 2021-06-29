@@ -1,0 +1,36 @@
+
+.transactionHistory {
+  width: 700px;
+  border-radius: 2px;
+  border-collapse: separate;
+}
+
+.tableHead {
+  background-color: rgb(64, 175, 240);
+}
+
+.tableHead th {
+  width: calc(100% / 3);
+  padding: 15px 0 15px 0;
+  color: white;
+  font-size: 13px;
+}
+
+.tableBody {
+  background-color: white;
+}
+
+.tableBody tr:nth-child(2n) {
+  background-color: rgb(240, 239, 239);
+}
+
+.tableBody td {
+  padding: 15px 0 15px 0;
+  text-align: center;
+  color: rgb(117, 117, 117);
+}
+
+.tableBody [data-content='type'] {
+  text-align: left;
+  padding-left: 100px;
+}
